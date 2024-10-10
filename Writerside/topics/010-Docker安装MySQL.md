@@ -130,7 +130,7 @@ docker restart mysql
 
 ```sql
 use mysql;
-update user set host = '%' where user = 'root';
+grant all privileges on *.* to 'root'@'%' with grant option;
 flush privileges;
 exit;
 ```
