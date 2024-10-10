@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="51951759">
+        <description><![CDATA[Created after removal of "<华为云服务器购买.md>" from hadoop]]></description>
+        <accepts>华为云服务器购买.html</accepts>
+    </rule>
+    <rule id="69e105cb">
+        <description><![CDATA[Created after removal of "<课时统计.md>" from hadoop]]></description>
+        <accepts>课时统计.html</accepts>
+    </rule>
+    <rule id="1e0758e5">
+        <description>Created after removal of "Overview" from hadoop</description>
+        <accepts>Overview.html</accepts>
+    </rule>
+</rules>

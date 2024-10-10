@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="h"
+                  name="Hadoop笔记" start-page="000-单机模式搭建.md">
+    <toc-element topic="000-单机模式搭建.md"/>
+    <toc-element topic="001-伪分布式搭建.md"/>
+    <toc-element topic="002-大数据0405班补充.md"/>
+    <toc-element topic="003-yarn配置部署.md"/>
+    <toc-element topic="004-CLI文件操作及yarn测试.md"/>
+    <toc-element topic="005-更改服务器配置.md"/>
+    <toc-element topic="006-Java API开发环境.md"/>
+    <toc-element topic="007-Java API开发HDFS.md"/>
+    <toc-element topic="008-API开发常见问题.md"/>
+    <toc-element topic="009-Linux安装Docker.md"/>
+    <toc-element topic="010-Docker安装MySQL.md"/>
+    <toc-element topic="011-Hive的简介和安装.md"/>
+    <toc-element topic="012-Hive爱之初体验.md"/>
+    <toc-element topic="013-HiveServer2连接.md"/>
+    <toc-element topic="014-Hive基本语法.md"/>
+    <toc-element topic="015-Hive内部外部表.md"/>
+    <toc-element topic="016-Hive分区表分桶表.md"/>
+    <toc-element topic="017-Hive数据导入导出.md"/>
+    <toc-element topic="018-Hive复杂数据类型.md"/>
+    <toc-element topic="019-Hive常用函数.md"/>
+    <toc-element topic="020-Zookeeper安装配置.md"/>
+    <toc-element topic="021-完全分布式搭建.md"/>
+    <toc-element topic="101-案例介绍：果业大数据数仓.md"/>
+    <toc-element topic="102-数仓项目：模拟数据.md"/>
+    <toc-element topic="103-数仓项目：数据分析.md"/>
+</instance-profile>
