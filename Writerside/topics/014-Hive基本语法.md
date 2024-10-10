@@ -6,7 +6,7 @@
 
 :squid: 添加数据库
 
-```hive
+```sql
 // 创建数据库, 存在则不创建
 create database if not exists my_hive;
 // 指定hdfs上的存储路径并创建数据库, 存在则不创建
@@ -31,7 +31,7 @@ Hive中数据库的本质就是hdfs上的文件夹。
 
 :squid: 删除数据库
 
-```hive
+```sql
 // 删除空数据库， 如果有表则会报错
 drop database if exists my_hive;
 // 强制删除数据库，连表一起删
@@ -44,7 +44,7 @@ drop database if exists my_hive2 cascade ;
 
 **1. 创建数据表**
 
-```hive
+```sql
 CREATE [EXTERNAL] TABLE [IF NOT EXISTS] table_name 
 [(col_name data_type [COMMENT col_comment], ...)] 
 [COMMENT table_comment] 
@@ -103,7 +103,7 @@ CREATE [EXTERNAL] TABLE [IF NOT EXISTS] table_name
 
 **3. 创建一个简单的数据表**
 
-```hive
+```sql
 create database if not exists test;
 
 create table if not exists test.test2
@@ -120,7 +120,7 @@ create table if not exists test.test2
 
 **4. 删除数据表**
 
-```hive
+```sql
 drop table test.test2;
 ```
 

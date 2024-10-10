@@ -1,5 +1,4 @@
 # 006-Java API开发环境
-
 HDFS在生产应用中主要是Java客户端的开发，其核心步骤是从HDFS提供的API中构造一个HDFS的访问客户端对象然后通过该客户端对象操作(增删改查)HDFS上的文件。
 
 ## 一、前提条件
@@ -142,7 +141,7 @@ Hadoop在Java API中有两个核心类分别为`Configuration`和`FileSystem`，
 
 删除`/opt/data/tmp`下的所有文件，然后重新格式化，完成后启动hdfs
 
-```sh
+```shell
 rm -rf /opt/data/tmp/*
 su hadoop
 hdfs namenode -format

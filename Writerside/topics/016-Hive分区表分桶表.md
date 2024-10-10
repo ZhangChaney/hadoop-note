@@ -40,7 +40,7 @@ Hive分桶表常见的分桶策略主要包括以下两种：
 
 ### 分区表
 
-```hive
+```sql
 // 创建一个简单的分区表
 create table if not exists pt1
 (
@@ -77,7 +77,7 @@ from pt1;
 
 通过`load data`将数据导入到数据表中
 
-```hive
+```sql
 // 导入hdfs数据并指定分区
 load data inpath '/opt/data/china_data.txt' into table pt1 partition (country='china');
 load data inpath '/opt/data/usa_data.txt' into table pt1 partition (country='usa');
@@ -97,7 +97,7 @@ from pt1;
 
 创建一个多级分区表
 
-```hive
+```sql
 // 创建一个多级分区表
 create table if not exists pt2
 (
@@ -110,7 +110,7 @@ row format delimited fields terminated by ',';
 
 重新上传导入数据，此时需要指定两个分区
 
-```hive
+```sql
 // 重新上传导入数据，此时需要指定两个分区
 load data inpath '/opt/data/china_data.txt' into table pt2 partition (country='china', province='shandong');
 load data inpath '/opt/data/usa_data.txt' into table pt2 partition (country='china', province='henan');
@@ -118,7 +118,7 @@ load data inpath '/opt/data/usa_data.txt' into table pt2 partition (country='chi
 
 查看数据表
 
-```hive
+```sql
 select * from pt2;
 ```
 
@@ -134,7 +134,7 @@ hdfs上查看文件分区，在country=china下有两个目录
 
 创建一个简单的分桶表
 
-```hive
+```sql
 create table bt1 (
     id int,
     name string,
@@ -144,7 +144,7 @@ create table bt1 (
 
 插入数据，在分桶表中，由于hash算法和load data机制原因，不能使用load data导入数据， 需要使用 insert into .. select插入数据，因此先查询表pt1，然后将查询结果数据导入到bt1表。
 
-```hive
+```sql
 // 插入数据，不支持load data
 insert into table bt1 select * from pt1;
 ```

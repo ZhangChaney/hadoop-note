@@ -2,7 +2,7 @@
 
 ## 使用Hive语句导入导出
 
-```hive
+```sql
 // 数据导入
 // 简单创建一个内部表
 create table if not exists book
@@ -43,7 +43,7 @@ select * from book;
 
 ## 使用Hive CLI导出数据
 
-```sh
+```shell
 cd $HIVE_HOME
 # 导出 export数据到/opt/data/export/exp.txt中
 bin/hive -e "select * from book;" > /opt/data/export/exp.txt
@@ -53,7 +53,7 @@ cat /opt/data/export/exp.txt
 
 通过-f可以执行sql文件导出数据
 
-```hive
+```sql
 bin/hive -f exp.sql > /opt/data/export/exp02.txt
 cat /opt/data/export/exp02.txt
 

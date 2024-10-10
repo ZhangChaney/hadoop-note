@@ -31,7 +31,7 @@ https://dlcdn.apache.org/zookeeper/zookeeper-3.8.4/apache-zookeeper-3.8.4-bin.ta
 
 ## 二、安装
 
-```sh
+```shell
 cd /opt/packages
 # 解压
 tar -zxvf apache-zookeeper-3.8.4-bin.tar.gz -C /opt/modules
@@ -56,7 +56,7 @@ mv /opt/modules/apache-zookeeper-3.8.4-bin/ /opt/modules/zookeeper-3.8.4
 
 在另外两台机器上分别创建hadoop用户，密码1234，不会创建的同学自行百度
 
-```sh
+```shell
 ssh-keygen  # 生成密钥
 for i in {04,05,06};do ssh-copy-id hadoop$i;done; # for循环遍历配置免密登录
 ```
@@ -65,7 +65,7 @@ for i in {04,05,06};do ssh-copy-id hadoop$i;done; # for循环遍历配置免密�
 
 ### 创建日志、数据目录
 
-```sh
+```shell
 cd zookeeper-3.8.4/
 
 mkdir logs
@@ -76,7 +76,7 @@ mkdir zkData
 
 修改zookeeper的配置文件，`vim conf/zoo.cfg`，打开是个空文件不要紧张，写入下面内容
 
-```properties
+```python
 tickTime=2000
 dataDir=/opt/modules/zookeeper-3.8.4/zkData
 log4j.configuration=/opt/modules/zookeeper-3.8.4/conf/log4j.properties
@@ -89,8 +89,7 @@ server.3=hadoop03:2888:3888
 ```
 
 修改日志配置文件`log4j.properties`， `vim conf/log4j.properties`，也是一个空文件，也不要紧张，写入下面内容
-
-```properties
+```python
 # 定义日志输出路径
 log4j.appender.file.File=/opt/modules/zookeeper-3.8.4/logs/zookeeper.log
 # 定义日志轮循策略，按天轮循
@@ -114,7 +113,7 @@ log4j.appender.file.layout.ConversionPattern=%d{ISO8601} [%t] %-5p %c{1}:%L - %m
 
 在`zkServer.sh`中的第29行，配置JAVA_HOME
 
-```sh
+```shell
 JAVA_HOME=/opt/modules/jdk8
 ```
 
@@ -122,7 +121,7 @@ JAVA_HOME=/opt/modules/jdk8
 
 `vim /etc/profile`， 末尾追加ZK_HOME
 
-```sh
+```shell
 export ZK_HOME=/opt/modules/zookeeper-3.8.4
 export PATH=$ZK_HOME/bin:$PATH
 ```
@@ -133,7 +132,7 @@ export PATH=$ZK_HOME/bin:$PATH
 
 编写一个一键启动脚本`zkctl.sh`，这样就不需要在每台机器上一个一个启动zk，`vim bin/zkctl.sh`
 
-```sh
+```shell
 #!/bin/bash
  
 # 在调用shell脚本时，需要传入一个参数，用于标识执行开启或者关闭zk集群的开启关闭和查询状态
@@ -189,7 +188,7 @@ esac
 
 将zookeeper和jdk8分发到每一台机器上，在此之前先在其余两台机器上创建好`/opt/modules`目录
 
-```sh
+```shell
 # 分发zookeeper
 scp -r /opt/modules/zookeeper-3.8.4/ hadoop02:/opt/modules/zookeeper-3.8.4/
 scp -r /opt/modules/zookeeper-3.8.4/ hadoop03:/opt/modules/zookeeper-3.8.4/
@@ -215,6 +214,6 @@ scp /etc/sudoers hadoop03:/etc/sudoers
 
 ## 四、启动
 
-```sh
+```shell
 zkctl.sh start  # 启动
 zkctl.sh status  # 查看集群状态

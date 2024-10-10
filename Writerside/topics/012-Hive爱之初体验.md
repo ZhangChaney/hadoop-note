@@ -4,7 +4,7 @@
 - 启动hive元数据管理服务
 - 进入hive shell
 
-```hive
+```sql
 create database if not exists test;
 
 use test;

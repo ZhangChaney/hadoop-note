@@ -20,7 +20,7 @@ Hive函数在ETL工程、数仓构建中起非常关键的作用。
 
 ## 数值函数
 
-```hive
+```sql
 // round() 取整函数，可以指定精度，四舍五入
 select round(5.21548963);
 select round(5.21548963, 2);
@@ -37,7 +37,7 @@ select log(8);
 
 ## 日期函数
 
-```hive
+```sql
 // current_timestamp()  当前时间戳
 select current_timestamp();
 
@@ -68,7 +68,7 @@ select data_sub('2024-09-30', 1);
 
 ## 类型转换函数
 
-```hive
+```sql
 // binary()  字符串转二进制
 select binary('hadoop');
 
@@ -80,7 +80,7 @@ select cast('1' as int);
 
 ## 字符串函数
 
-```hive
+```sql
 // 拼接
 select concat('123', '456');
 select concat_ws('--', '123', '456'); // 可以指定分隔符
@@ -98,7 +98,7 @@ select concat_ws('--', '123', '456'); // 可以指定分隔符
 
 ## 条件函数
 
-```hive
+```sql
 // isnull()  isnotnull()
 select isnull('');
 select isnotnull('');
@@ -116,7 +116,7 @@ select if(0, 'true', 'false');
 
 ## 脱敏函数
 
-```hive
+```sql
 // hash加密
 select mask_hash('hadoop');
 

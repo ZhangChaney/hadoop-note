@@ -1,6 +1,6 @@
 # 011-Hive的简介和安装
 
-## 一、Hive简介
+## 一、Hive简介 {id="hive_1"}
 
 ‌**Hive是一个基于Hadoop的数据仓库工具，主要用于进行数据提取、转化、加载（ETL）操作，并能够存储、查询和分析存储在Hadoop中的大规模数据。**‌ Hive通过将结构化的数据文件映射为数据库表，并提供类SQL查询功能，使用户可以通过熟悉的SQL语句来查询数据。其核心是将SQL语句转换为MapReduce任务进行运算，底层由HDFS提供数据存储‌。
 
@@ -47,11 +47,11 @@ https://repo1.maven.org/maven2/mysql/mysql-connector-java/ 课程使用5.1.47版
 
 
 
-## 四、Hive安装
+## 四、Hive安装 {id="hive_2"}
 
 解压hive
 
-```sh
+```shell
 cd /opt/packages  # 进入压缩包存放目录
 tar -zxvf apache-hive-3.1.3-bin.tar.gz -C /opt/modules/  # 解压到modules
 mv /opt/modules/apache-hive-3.1.3-bin/ /opt/modules/hive-3.1.3  # 原来名字太长了改个名字
@@ -59,7 +59,7 @@ mv /opt/modules/apache-hive-3.1.3-bin/ /opt/modules/hive-3.1.3  # 原来名字�
 
 将mysql驱动的jar包拷贝到hive的lib目录下
 
-```sh
+```shell
 cp mysql-connector-java-5.1.47.jar /opt/modules/hive-3.1.3/lib/
 ```
 
@@ -69,7 +69,7 @@ cp mysql-connector-java-5.1.47.jar /opt/modules/hive-3.1.3/lib/
 
 在`profile`文件中追加配置hive的环境变量
 
-```sh
+```shell
 export HIVE_HOME=/opt/modules/hive-3.1.3
 ```
 
@@ -77,7 +77,7 @@ export HIVE_HOME=/opt/modules/hive-3.1.3
 
 在Hive的conf目录内，新建`hive-env.sh`文件，填入以下环境变量内容:
 
-```sh
+```shell
 export HADOOP_HOME=$HADOOP_HOME
 export HIVE_CONF_DIR=$HIVE_HOME/conf
 export HIVE_AUX_JARS_PATH=$HIVE_HOME/lib
@@ -134,7 +134,7 @@ create database hive charset utf8;
 
 执行hive格式化命令
 
-```sh
+```shell
 cd /opt/modules/hive-3.1.3
 
 bin/schematool -initSchema -dbType mysql -verbos
@@ -151,7 +151,7 @@ schemaTool completed
 
 **此时可能出现以下错误：**
 
-```sh
+```shell
 Exception in thread "main" java.lang.NoSuchMethodError: com.google.common.base.Preconditions.checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V
         at org.apache.hadoop.conf.Configuration.set(Configuration.java:1357)
         at org.apache.hadoop.conf.Configuration.set(Configuration.java:1338)
@@ -166,20 +166,20 @@ Exception in thread "main" java.lang.NoSuchMethodError: com.google.common.base.P
 
 **解决方法：**
 
-```sh
+```shell
 mv $HIVE_HOME/lib/guava-19.0.jar $HIVE_HOME/lib/guava-19.0.jar.bak
 cp $HADOOP_HOME/share/hadoop/common/lib/guava-27.0-jre.jar $HIVE_HOME/lib
 ```
 
 创建日志文件夹
 
-```sh
+```shell
 mkdir /opt/modules/hive-3.1.3/logs
 ```
 
 最后将hive目录修改为hadoop用户所有
 
-```sh
+```shell
 chown -R hadoop:hadoop /opt/modules/hive-3.1.3
 ```
 
@@ -187,7 +187,7 @@ chown -R hadoop:hadoop /opt/modules/hive-3.1.3
 
 ## 七、启动
 
-```sh
+```shell
 su hadoop
 # 先启动hadoop， hive依赖于hadoop
 start-all.sh
@@ -195,7 +195,7 @@ start-all.sh
 
 启动hive元数据管理服务
 
-```sh
+```shell
 # 前台启动（一般不用）
 # bin/hive --service metastore
 # 后台启动
@@ -207,7 +207,7 @@ jobs
 
 启动客户端
 
-```sh
+```shell
 # 两种启动方式
 # Hive Shell方式，可以直接写SQL，先选择这种方式
 bin/hive

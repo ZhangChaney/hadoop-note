@@ -30,7 +30,7 @@ Hive中复杂数据类型涉及四类
 
 新建一张数据表array_table，将爱好列设置为数组类型，指定数据分隔符为`,`  ，数组元素分隔符为`|`
 
-```hive
+```sql
 // 创建一张含有数组类型的数据表并指定分隔符
 create table array_table
 (
@@ -43,7 +43,7 @@ collection items terminated by '|';
 
 ### 导入上传的数据
 
-```hive
+```sql
 // 导入数据
 load data inpath '/opt/data/array_data.txt' into table array_table;
 
@@ -58,14 +58,14 @@ from array_table;
 
 数组索引取值以及查看数组长度
 
-```hive
+```sql
 //数组索引取值
 select name, hobbies[0] as first_hobby from array_table;
 ```
 
 ![image-20241003000057977](./assets/image-20241003000057977.png)
 
-```hive
+```sql
 //查看数组长度
 select name, size(hobbies) as hobbies_count from array_table;
 ```
@@ -74,7 +74,7 @@ select name, size(hobbies) as hobbies_count from array_table;
 
 判断数组中是否存在元素
 
-```hive
+```sql
 // 判断数组中是否存在元素
 select *
 from array_table
@@ -100,7 +100,7 @@ where array_contains(hobbies, '篮球');
 
 新建一张数据表map_table，将信息列设置为map类型，指定数据分隔符为`,`  ，元素分隔符为`|`， map的分隔符为`:`
 
-```hive
+```sql
 // 导入数据
 load data inpath '/opt/data/map_data.txt' into table map_table;
 
@@ -113,7 +113,7 @@ from map_table;
 
 ## 常用操作
 
-```hive
+```sql
 // 根据key取值
 select name, info['身高'] as height from map_table;
 

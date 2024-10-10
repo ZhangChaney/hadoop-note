@@ -2,7 +2,7 @@
 
 **Hive提供了第三方连接接口HiveServer2，若需要使用该接口，就需要以HiveServer2的方式启动Hive**
 
-```sh
+```shell
 # 在此之前需要确保hive的metastore服务启动，启动metastore之前要确保mysql启动
 nohup bin/hive --service hiveserver2 >> logs/hiveserver2.log 2>&1 &
 ```
@@ -19,7 +19,7 @@ nohup bin/hive --service hiveserver2 >> logs/hiveserver2.log 2>&1 &
 
 **Beeline连接Hive**
 
-```sh
+```shell
 bin/beeline
 !connect jdbc:hive2://hadoop01:10000
 ```

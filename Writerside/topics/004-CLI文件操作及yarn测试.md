@@ -2,7 +2,7 @@
 
 ## 一、CLI操作HDFS
 
-```sh
+```shell
 # 创建目录
 hdfs dfs -mkdir -p /opt/data
 # 上传文件
@@ -13,7 +13,7 @@ hdfs dfs -put /opt/data/wc.input /opt/data/
 
 ## 二、测试yarn任务管理
 
-```sh
+```shell
 cd /opt/modules/hadoop-3.1.3
 
 hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar wordcount /opt/data/wc.input /opt/data/wc.output
@@ -59,7 +59,7 @@ Please check whether your etc/hadoop/mapred-site.xml contains the below configur
 
 查看日志
 
-```sh
+```shell
 jps
 # 发现resourcemanager直接挂掉了，于是检查resourcemanager的日志
 tail -n100 /opt/modules/hadoop-3.1.3/logs/hadoop-hadoop-resourcemanager-hadoop03.log
@@ -89,7 +89,7 @@ Container exited with a non-zero exit code 1. Error file: prelaunch.err.
 
 解决方式
 
-```sh
+```shell
 hadoop classpath
 # 拷贝输出内容添加到yarn-site.xml
 /opt/modules/hadoop-3.1.3/etc/hadoop:/opt/modules/hadoop-3.1.3/share/hadoop/common/lib/*:/opt/modules/hadoop-3.1.3/share/hadoop/common/*:/opt/modules/hadoop-3.1.3/share/hadoop/hdfs:/opt/modules/hadoop-3.1.3/share/hadoop/hdfs/lib/*:/opt/modules/hadoop-3.1.3/share/hadoop/hdfs/*:/opt/modules/hadoop-3.1.3/share/hadoop/mapreduce/lib/*:/opt/modules/hadoop-3.1.3/share/hadoop/mapreduce/*:/opt/modules/hadoop-3.1.3/share/hadoop/yarn:/opt/modules/hadoop-3.1.3/share/hadoop/yarn/lib/*:/opt/modules/hadoop-3.1.3/share/hadoop/yarn/*
@@ -106,7 +106,7 @@ hadoop classpath
 
 运行发现卡住不动
 
-```sh
+```shell
 # 卡在这里不动了一直是0%
 INFO mapreduce.Job:  map 0% reduce 0%
 
@@ -123,7 +123,7 @@ free -m # 发现内存用完了
 
 运行报错
 
-```sh
+```shell
 2024-09-19 20:11:05,727 INFO mapreduce.JobSubmitter: Cleaning up the staging area file:/tmp/hadoop/mapred/staging/hadoop824734288/.staging/job_local824734288_0001
 ENOENT: No such file or directory
 ```
@@ -150,7 +150,7 @@ chown -R hadoop:hadoop /tmp/hadoop
 
 在yarn-web页面中点击Applications，下方查看执行的任务，查看FinalState一栏中是否为SUCCEEDED，是则表示成功，FAILED表示失败。
 
-```sh
+```shell
 # 查看计算结果
 hdfs dfs -cat /opt/data/wc.output/part-r-00000
 # 输出计算结果

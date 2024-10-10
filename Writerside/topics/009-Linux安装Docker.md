@@ -20,7 +20,7 @@ yum repolist
 
 
 
-### 二、移除旧版本docker
+### 二、移除旧版本docker {id="docker_1"}
 
 ```bash
 yum remove docker \
@@ -62,7 +62,7 @@ yum install docker-ce -y
 
 回到服务器中，配置镜像加速文件
 
-```sh
+```shell
 vim /etc/docker/daemon.json
 ```
 

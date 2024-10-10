@@ -24,7 +24,7 @@ Hive的表分类主要包括以下四种：
 
 **1.创一个内部表`book`并插入几数据**
 
-```hive
+```sql
 create database if not exists test;
 
 // 简单创建一个内部表
@@ -51,7 +51,7 @@ from test.book;
 
 **2. 创建表指定分隔符**
 
-```hive
+```sql
 create table if not exists test.book2
 (
     id        int    not null,
@@ -68,7 +68,7 @@ create table if not exists test.book2
 
 通过删除数据表，检验内部表备删除后是否会将数据全部删除。
 
-```hive
+```sql
 // 删除数据表
 drop table test.book;
 drop table test.book2;
@@ -88,7 +88,7 @@ drop table test.book2;
 
 **4. 创建一张外部表`book_ex`指定存储位置**
 
-```hive
+```sql
 // 创建一张外部表，指定存储在/ext_tb目录
 create external table if not exists test.book_ext1
 (
@@ -130,7 +130,7 @@ from test.book_ext1;
 
 删除数据库，检查数据是否被删除。
 
-```hive
+```sql
 // 删除数据库查看数据文件是否被删除
 drop table test.book_ext1;
 ```
@@ -143,7 +143,7 @@ drop table test.book_ext1;
 
 上述操作完成后，在`/ext_tb`目录下已经存在有数据了，此时再新建一张外部表，查看是否可以关联已有数据。
 
-```hive
+```sql
 // 根据现有数据创建外部表
 create external table if not exists test.book_ext2
 (
@@ -175,7 +175,7 @@ from test.book_ext2;
 
 要将外部表转换为内部表，你可以使用ALTER TABLE语句来更改表的类型。以下是一个示例SQL语句：
 
-```hive
+```sql
 alter table external_table_name set tblproperties  ('EXTERNAL'='TRUE');
 ```
 
@@ -186,7 +186,7 @@ alter table external_table_name set tblproperties  ('EXTERNAL'='TRUE');
 
 同样，要将内部表转换为外部表，也可以使用ALTER TABLE语句，但这次是将EXTERNAL属性设置为TRUE：
 
-```hive
+```sql
 alter table managed_table_name set tblproperties  ('EXTERNAL'='TRUE');
 ```
 

@@ -9,7 +9,7 @@
 
 在这两个文件的最后一行追加JAVA_HOME
 
-```sh
+```shell
 vim /opt/modules/hadoop-3.1.3/etc/hadoop/mapred-env.sh 
 # 最后一行追加以下内容
 export JAVA_HOME=/opt/modules/jdk8
@@ -17,7 +17,7 @@ export JAVA_HOME=/opt/modules/jdk8
 
 :wq保存退出
 
-```sh
+```shell
 vim /opt/modules/hadoop-3.1.3/etc/hadoop/yarn-env.sh 
 # 最后一行追加以下内容
 export JAVA_HOME=/opt/modules/jdk8
@@ -28,7 +28,7 @@ export JAVA_HOME=/opt/modules/jdk8
 - mapred-site.xml
 - yarn-site.xml
 
-```sh
+```shell
 vim /opt/modules/hadoop-3.1.3/etc/hadoop/mapred-site.xml 
 ```
 
@@ -45,7 +45,7 @@ vim /opt/modules/hadoop-3.1.3/etc/hadoop/mapred-site.xml
 
 :wq保存退出
 
-```sh
+```shell
 vim /opt/modules/hadoop-3.1.3/etc/hadoop/yarn-site.xml 
 ```
 
@@ -69,7 +69,7 @@ vim /opt/modules/hadoop-3.1.3/etc/hadoop/yarn-site.xml
 
 ## 二、启动测试
 
-```sh
+```shell
 su hadoop  # 切换到hadoop用户启动
 start-all.sh  # 同时启动hdfs和yarn
 jps

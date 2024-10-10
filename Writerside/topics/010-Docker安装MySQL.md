@@ -10,7 +10,7 @@ REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 mysql        5.7       5107333e08a8   5 months ago   501MB
 ```
 
-## 二、快速启动一个MySQL容器
+## 二、快速启动一个MySQL容器 {id="mysql_1"}
 
 ```bash
 $ docker run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7
@@ -80,7 +80,6 @@ $ docker run -p 3306:3306 --name mysql --restart=always --privileged=true \
 > - -e MYSQL_ROOT_PASSWORD=123456：指定mysql环境变量，root用户的密码为123456
 > - -v /usr/local/mysql/data:/var/lib/mysql：映射数据目录，宿主机:容器
 
-### 
 
 ### 4.查看容器状态，测试链接
 
@@ -123,7 +122,7 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: Y
 
 将`my.cnf`配置文件中的`#skip-grant-tables`取消注释后重启容器
 
-```sh
+```shell
 docker restart mysql
 ```
 
