@@ -11,8 +11,8 @@
     <toc-element topic="003-yarn配置部署.md"/>
     <toc-element topic="004-CLI文件操作及yarn测试.md"/>
     <toc-element topic="005-更改服务器配置.md"/>
-    <toc-element topic="006-Java API开发环境.md"/>
-    <toc-element topic="007-Java API开发HDFS.md"/>
+    <toc-element topic="006-JavaAPI开发环境.md"/>
+    <toc-element topic="007-JavaAPI开发HDFS.md"/>
     <toc-element topic="008-API开发常见问题.md"/>
     <toc-element topic="009-Linux安装Docker.md"/>
     <toc-element topic="010-Docker安装MySQL.md"/>

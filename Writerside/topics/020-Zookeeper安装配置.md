@@ -88,6 +88,7 @@ server.2=hadoop02:2888:3888
 server.3=hadoop03:2888:3888
 ```
 
+
 修改日志配置文件`log4j.properties`， `vim conf/log4j.properties`，也是一个空文件，也不要紧张，写入下面内容
 ```python
 # 定义日志输出路径
@@ -96,14 +97,14 @@ log4j.appender.file.File=/opt/modules/zookeeper-3.8.4/logs/zookeeper.log
 log4j.appender.file.DatePattern='.'yyyy-MM-dd
 log4j.appender.file.append=true
 log4j.appender.file.layout=org.apache.log4j.PatternLayout
-log4j.appender.file.layout.ConversionPattern=%d{ISO8601} [%t] %-5p %c{1}:%L - %m%n
+log4j.appender.file.layout.ConversionPattern=%d{ISO8601} [%t] %-5p %c{1}:%L - %m %n
 ```
 
 ### 配置myid
 
 在zkData目录下新建myid文件，写入机器id， `vim zkData/myid`
 
-```tex
+```python
 1
 ```
 
