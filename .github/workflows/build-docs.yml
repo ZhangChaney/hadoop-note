@@ -11,7 +11,7 @@ permissions:
 
 env:
   INSTANCE: 'Writerside/Hadoop笔记'
-  ARTIFACT: 'webHelpHadoop笔记2-all.zip'
+  ARTIFACT: 'webHelpHADOOP笔记2-all.zip'
   DOCKER_VERSION: '241.16003'
 
 jobs:
