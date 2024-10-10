@@ -3,7 +3,8 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="h"
-                  name="Hadoop笔记" start-page="000-单机模式搭建.md">
+                  name="Hadoop笔记"
+                  start-page="000-单机模式搭建.md">
     <toc-element topic="000-单机模式搭建.md"/>
     <toc-element topic="001-伪分布式搭建.md"/>
     <toc-element topic="002-大数据0405班补充.md"/>
