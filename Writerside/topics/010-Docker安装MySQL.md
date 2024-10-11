@@ -42,25 +42,28 @@ $ mkdir -p /opt/software/mysql/mysql-01/logs
 
 ### 2.编写my.cnf配置文件
 
-> [mysqld]
->
-> #skip-grant-tables
->
-> skip-host-cache
-> skip-name-resolve
-> datadir=/var/lib/mysql
-> socket=/var/run/mysqld/mysqld.sock
-> secure-file-priv=/var/lib/mysql-files
-> user=mysql
->
-> symbolic-links=0
->
-> pid-file=/var/run/mysqld/mysqld.pid
-> [client]
-> socket=/var/run/mysqld/mysqld.sock
->
-> !includedir /etc/mysql/conf.d/
-> !includedir /etc/mysql/mysql.conf.d/
+```
+[mysqld]
+
+ #skip-grant-tables
+
+ skip-host-cache
+ skip-name-resolve
+ datadir=/var/lib/mysql 
+ socket=/var/run/mysqld/mysqld.sock 
+ secure-file-priv=/var/lib/mysql-files
+user=mysql
+
+ symbolic-links=0
+
+ pid-file=/var/run/mysqld/mysqld.pid
+ [client]
+ socket=/var/run/mysqld/mysqld.sock
+
+ !includedir /etc/mysql/conf.d/
+ !includedir /etc/mysql/mysql.conf.d/
+```
+
 
 ### 3.挂载启动容器
 
