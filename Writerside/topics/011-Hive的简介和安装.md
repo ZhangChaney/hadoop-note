@@ -216,5 +216,3 @@ bin/hive
 ```
 
 在CLI窗口执行sql语句`show databases;`，出现一个default的数据库则表示启动成功。
-
-C:\Users\HUAWEI\Documents\TencentMeeting\2024-10-10 11.34.57 chaney的个人会议室 9903385961
